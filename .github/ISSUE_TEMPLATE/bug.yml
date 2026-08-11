@@ -1,0 +1,15 @@
+name: Bug
+description: Something else is broken
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect, what did you get instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Node version
+      placeholder: node --version
