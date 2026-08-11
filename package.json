@@ -1,0 +1,56 @@
+{
+  "name": "unfurlbot",
+  "version": "1.0.0",
+  "description": "Discord bot that replaces social media links with embed-fixing proxies",
+  "author": "unfurl.bot",
+  "homepage": "https://unfurl.bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/validllc/unfurlbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/validllc/unfurlbot/issues"
+  },
+  "keywords": [
+    "discord",
+    "discord-bot",
+    "embeds",
+    "fxtwitter",
+    "link-fixer"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "npm run clean && npm run typecheck && tsc -p tsconfig.build.json",
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
+    "start": "node --env-file=.env dist/index.js",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0",
+    "vitest": "^2.1.5"
+  },
+  "license": "MIT"
+}
